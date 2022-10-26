@@ -2,21 +2,28 @@
 import random
 
 
-num_lives = 5
+
+
+
 class Hangman:
-    def __init__(self, word_list, num_lives, word, word_guessed, num_letters, list_of_guesses, guess):
-        self.word_list = word_list
-        self.num_lives = num_lives
-        self.word = word
-        self.word_guessed = word_guessed
-        self.num_letters = num_letters
-        self.list_of_guesses = list_of_guesses
-        self.guess = guess
+    def __init__(self, word_list, num_lives = 5):
+        self.word_list = list
+        self.num_lives = int
+        self.word = str
+        self.word_guessed = str
+        self.num_letters = int
+        self.list_of_guesses = list
+        self.guess = str
     def check_guess(self, guess):
         self.guess.lower()
         if self.guess in self.word:
-                print("Good guess!", self.guess, "is in the word.")
-            
+            print("Good guess!", self.guess, "is in the word.")
+            for x in self.word:
+                    if x == self.guess:
+                        break
+                    else:
+                        print("Hello World")
+                
         else:
             print("Sorry", guess, "is not in the word.")
 
