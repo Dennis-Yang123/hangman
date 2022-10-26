@@ -3,6 +3,8 @@ import random
 
 
 
+word_list = ["banana", "apple", "orange", "strawberry", "pineapple"]
+word = random.choice(word_list)
 
 
 class Hangman:
