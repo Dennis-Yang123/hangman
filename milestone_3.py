@@ -20,6 +20,7 @@ def ask_for_input():
             print("Invalid letter. Please, enter a single alphabetical character.")
         elif len(guess) == 1:
             check_guess(guess)
+            break
                 
         else:
             print("Invalid letter. Please, enter a single alphabetical character.")    
