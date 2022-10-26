@@ -10,6 +10,7 @@ while True:
     elif len(guess) == 1:
         if guess in word:
             print("Good guess!", guess, "is in the word.")
+            break
             
         else:
             print("Sorry", guess, "is not in the word.")
