@@ -29,7 +29,7 @@ class Hangman():
             print("Sorry", guess, "is not in the word.")
 
     def ask_for_input():
-        list_of_guesses = []
+        
         while True:
             guess = input("Please enter a guess that is a single character and alphabetical letter")
             if guess.isalpha() == False:
