@@ -4,7 +4,7 @@ import random
 
 
 word_list = ["banana", "apple", "orange", "strawberry", "pineapple"]
-word = random.choice(word_list)
+
 
 
 class Hangman:
@@ -12,7 +12,7 @@ class Hangman:
         self.word_list = word_list
         self.num_lives = num_lives
         self.word = random.choice(word_list)
-        self.word_guessed = ["_"] * len(self.word)
+        self.word_guessed = ["_ "] * len(self.word)
         self.num_letters = len(set(self.word)) 
         self.list_of_guesses = []
         
@@ -21,11 +21,13 @@ class Hangman:
         guess.lower()
         if guess in self.word:
             print("Good guess!", guess, "is in the word.")
-            for x in self.word:
-                    if x == self.guess:
-                        break
-                    else:
-                        print("Hello World")  
+            for x in range(len(self.word)):
+                if sorted(guess) == sorted(self.word):
+                    self.word_guessed = [s for s in self.word if guess in s]
+                    break
+                else:
+                    print("Hello World")  
+            self.num_letters = self.num_letters - 1
         else:
             print("Sorry", guess, "is not in the word.")
 
