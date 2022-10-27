@@ -3,13 +3,11 @@ import random
 
 
 
-
+word_list = ["banana", "apple", "orange", "strawberry", "pineapple"]
+word = random.choice(word_list)
 
 
 class Hangman():
-    word_list = ["banana", "apple", "orange", "strawberry", "pineapple"]
-    word = random.choice(word_list)
-    
     def __init__(self, word_list, word, word_guessed, num_letters, list_of_guesses, num_lives = 5):
         self.word_list = word_list
         self.num_lives = num_lives
