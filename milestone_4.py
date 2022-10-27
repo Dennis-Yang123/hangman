@@ -8,7 +8,7 @@ word = random.choice(word_list)
 
 
 class Hangman():
-    def __init__(self, word_list, num_lives = 5, word, word_guessed, num_letters, list_of_guesses):
+    def __init__(self, word_list, word, word_guessed, num_letters, list_of_guesses, num_lives = 5):
         self.word_list = word_list
         self.num_lives = num_lives
         self.word = word
