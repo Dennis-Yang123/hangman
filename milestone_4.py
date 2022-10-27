@@ -21,7 +21,11 @@ class Hangman:
         guess.lower()
         if guess in self.word:
             print("Good guess!", guess, "is in the word.")
-                
+            for x in self.word:
+                    if x == self.guess:
+                        break
+                    else:
+                        print("Hello World")  
         else:
             print("Sorry", guess, "is not in the word.")
 
