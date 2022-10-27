@@ -7,15 +7,11 @@ word_list = ["banana", "apple", "orange", "strawberry", "pineapple"]
 word = random.choice(word_list)
 
 
-class Hangman:
+class Hangman():
     def __init__(self, word_list, num_lives = 5):
-        self.word_list = list
-        self.num_lives = int
-        self.word = str
-        self.word_guessed = str
-        self.num_letters = int
-        self.list_of_guesses = list
-        self.guess = str
+        self.word_list = word_list
+        self.num_lives = num_lives
+        
     def check_guess(self, guess):
         self.guess.lower()
         if self.guess in self.word:
@@ -29,20 +25,25 @@ class Hangman:
         else:
             print("Sorry", guess, "is not in the word.")
 
-    def ask_for_input(self):
+    def ask_for_input():
+        list_of_guesses = []
         while True:
             guess = input("Please enter a guess that is a single character and alphabetical letter")
             if guess.isalpha() == False:
                 print("Invalid letter. Please, enter a single alphabetical character.")
-            elif self.guess in self.list_of_guesses:
+            elif guess in list_of_guesses:
                 print("You've already tried that letter!")
             elif len(guess) != 1:
                 print("Invalid letter. Please, enter a single alphabetical character.")
                 
             else:
-                check_guess(guess)
+                abc.check_guess(guess)
                 list_of_guesses.extend(guess)
                 break
+    
+    def yoyo():
+        print("Hello World")
 
+abc = Hangman
 
 # %%
