@@ -42,6 +42,6 @@ class Hangman:
                 self.list_of_guesses.extend(guess)
                 break 
 
-
+###
 
 # %%
