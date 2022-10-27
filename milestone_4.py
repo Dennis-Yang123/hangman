@@ -8,12 +8,12 @@ word = random.choice(word_list)
 
 
 class Hangman:
-    def __init__(self, word_list, word, word_guessed, num_letters, list_of_guesses, num_lives = 5):
+    def __init__(self, word_list, num_lives = 5):
         self.word_list = word_list
-        self.word = word 
-        self.word_guessed = word_guessed 
-        self.num_letters = num_letters 
-        self.list_of_guesses = list_of_guesses
+        self.word = random.choice(word_list)
+        self.word_guessed = [_] * len(word)
+        self.num_letters = len(set(str)) 
+        self.list_of_guesses = []
         self.num_lives = num_lives
 
     def check_guess(self, guess):
