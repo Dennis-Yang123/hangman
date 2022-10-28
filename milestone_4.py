@@ -25,8 +25,8 @@ class Hangman:
             for x in range(len(self.word)):
                 if guess in wordlist:
                     self.word_guessed = [x if x == guess else "_" for x in wordlist]
-                    self.num_letters = self.num_letters - 1
-
+                    
+            self.num_letters = self.num_letters - 1
         else:
             print("Sorry", guess, "is not in the word.")
 
