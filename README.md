@@ -65,3 +65,50 @@ def ask_for_input():
             print("Invalid letter. Please, enter a single alphabetical character.")    
 ```
 For the `ask_for_input()` function I used a while loop to iteratively check whether the user input is valid using if statements and breaking the loop when it was a valid guess.
+
+## Milestone 4
+### Task 1
+This was probably the most challenging milestone yet. I was not familiar with classes so had to teach myself and google as much as possible.
+
+```
+class Hangman:
+    def __init__(self, word_list, num_lives = 5):
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = random.choice(word_list)
+        self.word_guessed = ["_"] * len(self.word)
+        self.num_letters = len(set(self.word)) 
+        self.list_of_guesses = []
+```
+I originally tried to set `word, word_guessed, num_letters, list_of_guesses` as parameters in addittion to the two above but then realised that was not what the task was asking for and could have created them from the two parameters.
+
+### Task 2
+This task was pretty straightforward since it was similar to the previous milestone and was a matter of copying code and slightly editing it.
+
+### Task 3
+This was probably the most challenging task in the milestone. I was tasked to create a for loop to check if the letter is equal to the guess and replace the "_" in the `word_guessed` list.
+
+```
+def check_guess(self, guess):
+        guess = guess.lower()
+        if guess in self.word:
+            print("Good guess!", guess, "is in the word.")
+            wordlist = [a for a in self.word] # Write the word as a list
+            for x in range(len(self.word)):
+                if guess in wordlist:
+                    self.word_guessed = [x if x == guess else "_" for x in wordlist]
+                    
+            self.num_letters = self.num_letters - 1
+        else:
+            self.num_lives = self.num_lives - 1
+            print("Sorry,", guess, "is not in the word.")
+            print("You have", self.num_lives, "lives left.")
+```
+The challenging part to this task was to create the for loop that would iteratively check the guess to the word and then replace the underscores in the `word_guessed` list in the correct order. I have done this with the following code 
+
+```
+self.word_guessed = [x if x == guess else "_" for x in wordlist]
+```
+
+### Task 4
+For this task I as asked to add print statements when the user entered the wrong letter, reduce the number of lives by one and add the guess to the `list_of_guesses` list. This was a straightforward task.
