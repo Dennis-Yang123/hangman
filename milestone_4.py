@@ -28,8 +28,10 @@ class Hangman:
                     
             self.num_letters = self.num_letters - 1
         else:
+            self.num_lives = self.num_lives - 1
             print("Sorry", guess, "is not in the word.")
-
+            print("You have", self.num_lives, "lives left.")
+        self.list_of_guesses = self.list_of_guesses.append(guess)
     def ask_for_input(self):
         while True:
             guess = input("Please enter a guess that is a single character and alphabetical letter")
