@@ -12,23 +12,22 @@ class Hangman:
         self.word_list = word_list
         self.num_lives = num_lives
         self.word = random.choice(word_list)
-        self.word_guessed = ["_ "] * len(self.word)
+        self.word_guessed = ["_"] * len(self.word)
         self.num_letters = len(set(self.word)) 
         self.list_of_guesses = []
         
 
     def check_guess(self, guess):
-        guess.lower()
+        guess = guess.lower()
         if guess in self.word:
             print("Good guess!", guess, "is in the word.")
+            wordlist = [a for a in self.word] # Write the word as a list
             for x in range(len(self.word)):
-                if sorted(guess) == sorted(self.word):
-                    self.word_guessed = [s for s in self.word if guess in s]
-                    break
-                else:
-                    print("Hello World")  
-            self.num_letters = self.num_letters - 1
+                if guess in wordlist:
+                    self.word_guessed = [x if x == guess else "_" for x in wordlist]
+                  
         else:
+            self.num_letters = self.num_letters - 1
             print("Sorry", guess, "is not in the word.")
 
     def ask_for_input(self):
