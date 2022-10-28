@@ -32,7 +32,7 @@ class Hangman:
             print("Sorry,", guess, "is not in the word.")
             print("You have", self.num_lives, "lives left.")
         
-        self.list_of_guesses = self.list_of_guesses.append(guess)
+        
     
     
     def ask_for_input(self):
@@ -50,6 +50,7 @@ class Hangman:
                 
             else:
                 self.check_guess(guess)
+                self.list_of_guesses = self.list_of_guesses.extend(guess)
                 break 
 
 test = Hangman
