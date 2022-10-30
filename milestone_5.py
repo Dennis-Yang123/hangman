@@ -51,18 +51,22 @@ class Hangman:
                 
             else:
                 self.check_guess(guess)
-                self.list_of_guesses = self.list_of_guesses.extend(guess)
+                #self.list_of_guesses = self.list_of_guesses.append(guess)
                 break 
-instance = Hangman(word_list, 5)
+        return guess
+
+
 
 def play_game(word_list):
     game = Hangman(word_list, num_lives = 5)
     while True:
         if num_lives == 0:
             print("You lost!")
+            return()
         elif num_lives > 0:
-            instance.ask_for_input()
+            game.ask_for_input()
         elif num_lives != 0 and num_letters < 1:
-            print("Congratulations")       
+            print("Congratulations") 
+            return()      
 # %%
 
