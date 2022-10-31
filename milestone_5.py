@@ -53,7 +53,7 @@ class Hangman:
                 self.check_guess(guess)
                 #self.list_of_guesses = self.list_of_guesses.append(guess)
                 break 
-        return guess
+        
 
 
 
