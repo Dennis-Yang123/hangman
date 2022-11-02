@@ -107,8 +107,54 @@ def check_guess(self, guess):
 The challenging part to this task was to create the for loop that would iteratively check the guess to the word and then replace the underscores in the `word_guessed` list in the correct order. I have done this with the following code 
 
 ```
-self.word_guessed = [x if x == guess else "_" for x in wordlist]
+self.word_guessed = [x if x == guess else "_" for x in wordlist] # Sidenote: I realised later this does not work and is fixed in Milestone 5.
 ```
 
 ### Task 4
 For this task I as asked to add print statements when the user entered the wrong letter, reduce the number of lives by one and add the guess to the `list_of_guesses` list. This was a straightforward task.
+
+## Milestone 5
+### Task 1
+For this task I was asked to code the logic of the game by creating a function that runs the game using the Hangman class.
+
+```
+def play_game(word_list):
+    game = Hangman(word_list, num_lives = 5)
+    while True:
+        if game.num_letters > 0:
+            game.ask_for_input()
+        elif game.num_lives == 0:
+            print("You lost!")
+            break
+        else:
+            print("Congratulations") 
+            break  
+```
+Above you can see the if block statements that dictate how the game is run. 
+
+A mistake I did not realise is that in Milestone 4 Task 3 is the replacing of the underscores in `word_guessed` was not working properly with the list comprehension I used since it would reset the whole list and would not keep previous correct guesses made by the user. To fix this I used the following code below:
+
+```
+def check_guess(self, guess):
+        guess = guess.lower()
+        if guess in self.word:
+            print("Good guess!", guess, "is in the word.")
+            empty_list = []
+            for index, letter in enumerate(list(self.word)):
+                if letter == guess:
+                    empty_list.append(index)
+            
+            for number in empty_list:
+                self.word_guessed[number] = guess
+    
+            self.num_letters = self.num_letters - 1
+           
+        else:
+            self.num_lives = self.num_lives - 1
+            print( "Sorry,", guess, "is not in the word.")
+            print("You have", self.num_lives, "lives left.")
+        print(self.word_guessed)
+```
+Above you can see I turn the word into a list and enumerate it and using the letter variable to get the specific letter and index and the additional index variable to get the specific index. Using `index` I appended it into a an empty list at the specific index the letter appears in the word. Then in another `for` loop and using the `number` index I insert the guess into that specific index in `word_guessed`.
+
+Thank you for reading this commentary.
