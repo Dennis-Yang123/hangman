@@ -64,9 +64,9 @@ def play_game(word_list):
             game.ask_for_input()
         elif game.num_lives == 0:
             print("You lost!")
-            return()
+            break
         else:
             print("Congratulations") 
-            return()      
+            break  
 # %%
 
