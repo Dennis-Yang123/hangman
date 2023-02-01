@@ -8,10 +8,8 @@ def check_guess(guess):
     guess.lower()
     if guess in word:
             print("Good guess!", guess, "is in the word.")
-            
     else:
         print("Sorry", guess, "is not in the word.")
-
 
 def ask_for_input():
     while True:
@@ -21,7 +19,6 @@ def ask_for_input():
         elif len(guess) == 1:
             check_guess(guess)
             break
-                
         else:
             print("Invalid letter. Please, enter a single alphabetical character.")    
 
